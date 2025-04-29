@@ -1,7 +1,4 @@
 📁 Pokédex
-markdown
-Copiar
-Editar
 # 🔍 Super Pokédex
 
 Uma Pokédex interativa e responsiva feita em **HTML, CSS e JavaScript puro**, inspirada visualmente no site oficial [pokemon.com](https://www.pokemon.com/br/pokedex).
