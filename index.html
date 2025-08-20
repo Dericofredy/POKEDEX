@@ -3,17 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ash e Pikachu - Animação</title>
+  <title>Pokédex Interativa</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="scene">
-    <div class="ash">
-      <img src="imagens/Ash.webp" alt="Ash">
-      <p class="speech">Pikachu, eu escolho você!</p>
-    </div>
-    <div class="pikachu">
-      <img id="pikachu-sprite" src="" alt="Pikachu">
+  <div class="pokedex">
+    <!-- Pokédex fechada -->
+    <img
+      id="pokedex-fechada"
+      src="imagens/cee42fd3-091d-4b29-9afe-8e9564f9ecff.png"
+      alt="Pokédex Fechada"
+      class="clicavel"
+    />
+
+    <!-- Pokédex aberta -->
+    <img
+      id="pokedex-aberta"
+      src="imagens/52b391c5-b995-489d-8395-ab3e23cbe6a6.png"
+      alt="Pokédex Aberta"
+      class="hidden"
+    />
+
+    <!-- Tela sobreposta -->
+    <div id="tela-pokedex" class="hidden">
+      <p id="mensagem">Pronto para explorar a Pokédex!</p>
+      <button id="btn-iniciar">Iniciar Pokédex</button>
     </div>
   </div>
 
