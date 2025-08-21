@@ -68,7 +68,8 @@ Layout responsivo e estilizado
 🔜 Próximas versões
 
 Versão	Recursos planejados
-v1.0.0 iniciar projeto
+v1.0.0  iniciar projeto
+v1.0.1  Atualizações no CSS e JS (troca dinâmica de imagens, botão iniciar Pokédex, integração com SVGs) 
 v1.1.0	Filtro por tipo (fogo, água, etc)
 v1.2.0	Filtro por geração/região (Kanto, Johto...)
 v1.3.0	Dark mode / Light mode
