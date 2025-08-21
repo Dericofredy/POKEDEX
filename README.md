@@ -87,3 +87,4 @@ Icons e dados via: PokéAPI
 📜 Licença
 Este projeto é livre para uso pessoal e educacional.
 Não é afiliado oficialmente à Nintendo, Game Freak ou The Pokémon Company.
+<!-- Forçando redeploy -->
