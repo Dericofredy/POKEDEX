@@ -1,26 +1,37 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* Estilo geral da página */
 body {
-  margin: 0;
   background-color: #111;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   font-family: 'Arial', sans-serif;
 }
 
-/* Container da Pokédex */
+/* Container da Pokédex com proporção exata */
 .pokedex {
   position: relative;
-  width: 100%;
-  max-width: 400px;
+  width: 90vw;            /* usa até 90% da tela em qualquer dispositivo */
+  max-width: 280px;       /* baseado na imagem da pokédex aberta */
+  min-width: 204px;       /* compatível com celulares pequenos */
+  aspect-ratio: 280 / 204; /* mantém proporção mesmo em redimensionamento */
 }
 
-/* Estilo das imagens */
+/* Estilo das imagens (fechada e aberta) */
 .pokedex img {
+  position: absolute;
   width: 100%;
+  height: 100%;
+  object-fit: contain;
   border-radius: 10px;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .clicavel {
@@ -37,13 +48,16 @@ body {
   top: 18%;
   left: 50%;
   transform: translateX(-50%);
+  width: 80%;
   text-align: center;
   color: #00ff00;
   font-weight: bold;
   text-shadow: 1px 1px 2px #000;
-  pointer-events: none; /* evita que clique na tela por cima da pokédex */
+  z-index: 10;
+  pointer-events: none; /* evita cliques no texto sobre a imagem */
 }
 
+/* Botão de iniciar */
 #btn-iniciar {
   margin-top: 20px;
   padding: 10px 20px;
@@ -53,7 +67,7 @@ body {
   color: white;
   border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.2s;
   pointer-events: all;
 }
 
