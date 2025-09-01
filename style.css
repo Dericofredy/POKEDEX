@@ -1,4 +1,4 @@
-/* Reset básico */ 
+/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,28 +10,42 @@ body {
   background-color: #111;
   height: 100vh;
   display: flex;
-  align-items: center;       /* centraliza na vertical */
+  align-items: center;
   font-family: 'Arial', sans-serif;
-  padding-left: 5vw;         /* posiciona a Pokédex à esquerda */
+  overflow: hidden;
 }
 
-/* Container da Pokédex com proporção exata */
+/* Pokédex container fixo no canto esquerdo */
 .pokedex {
   position: relative;
-  width: 90vw;               /* usa até 90% da tela */
-  max-width: 280px;          /* largura máxima (imagem aberta) */
-  min-width: 204px;          /* largura mínima (imagem fechada ou celular) */
-  aspect-ratio: 280 / 204;   /* mantém proporção sempre */
+  height: auto;
+  width: 280px;              /* largura total da pokédex aberta */
+  aspect-ratio: 280 / 204;
+  margin-left: 0;
+  margin-right: auto;
 }
 
-/* Estilo das imagens (fechada e aberta) */
+/* Imagens: ocupam todo o espaço do container */
 .pokedex img {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: auto;
   object-fit: contain;
   border-radius: 10px;
   transition: opacity 0.3s ease-in-out;
+}
+
+/* Força a imagem fechada ocupar apenas parte da largura */
+#pokedex-fechada {
+  width: 154px; /* largura real da pokédex fechada */
+  z-index: 5;
+}
+
+/* A imagem aberta já está com 280px, cobrindo tudo */
+#pokedex-aberta {
+  z-index: 4;
 }
 
 .clicavel {
@@ -42,30 +56,29 @@ body {
   display: none;
 }
 
-/* Tela sobreposta após a Pokédex abrir */
+/* Tela sobreposta */
 #tela-pokedex {
   position: absolute;
   top: 18%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
+  left: 170px; /* posição relativa à parte direita da pokédex */
+  width: 110px;
   text-align: center;
   color: #00ff00;
   font-weight: bold;
   text-shadow: 1px 1px 2px #000;
   z-index: 10;
-  pointer-events: none; /* evita cliques no texto sobre a imagem */
+  pointer-events: none;
 }
 
-/* Botão de iniciar */
+/* Botão */
 #btn-iniciar {
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 10px 15px;
+  font-size: 14px;
   border: none;
   background-color: #f00;
   color: white;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s;
   pointer-events: all;
