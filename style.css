@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset básico */ 
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,18 +10,18 @@ body {
   background-color: #111;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: center;       /* centraliza na vertical */
   font-family: 'Arial', sans-serif;
+  padding-left: 5vw;         /* posiciona a Pokédex à esquerda */
 }
 
 /* Container da Pokédex com proporção exata */
 .pokedex {
   position: relative;
-  width: 90vw;            /* usa até 90% da tela em qualquer dispositivo */
-  max-width: 280px;       /* baseado na imagem da pokédex aberta */
-  min-width: 204px;       /* compatível com celulares pequenos */
-  aspect-ratio: 280 / 204; /* mantém proporção mesmo em redimensionamento */
+  width: 90vw;               /* usa até 90% da tela */
+  max-width: 280px;          /* largura máxima (imagem aberta) */
+  min-width: 204px;          /* largura mínima (imagem fechada ou celular) */
+  aspect-ratio: 280 / 204;   /* mantém proporção sempre */
 }
 
 /* Estilo das imagens (fechada e aberta) */
