@@ -98,3 +98,11 @@ body {
   z-index: 10;        /* acima da imagem */
   padding: 0;
 }
+/* === CONTAINER EXTERNO PARA POSICIONAMENTO DA POKÉDEX === */
+.container-pokedex {
+  display: flex;
+  justify-content: flex-start;   /* fixa no lado esquerdo (poderia ser center) */
+  align-items: center;           /* centraliza verticalmente */
+  height: 100vh;
+  padding-left: 20px;            /* espaço da borda esquerda opcional */
+}
