@@ -1,5 +1,6 @@
 📁 Pokédex
-# 🔍 Super Pokédex
+
+#[🔍 Super Pokédex](https://dericofredy.github.io/POKEDEX/ ).
 
 Uma Pokédex interativa e responsiva feita em **HTML, CSS e JavaScript puro**, inspirada visualmente no site oficial [pokemon.com](https://www.pokemon.com/br/pokedex).
 
