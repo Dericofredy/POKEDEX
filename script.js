@@ -1,17 +1,26 @@
-// Referências aos elementos HTML
-const imgFechada = document.getElementById('pokedex-fechada');
-const imgAberta = document.getElementById('pokedex-aberta');
-const tela = document.getElementById('tela-pokedex');
-const btnIniciar = document.getElementById('btn-iniciar');
+// Espera o DOM carregar para evitar erro de elementos nulos
+window.addEventListener('DOMContentLoaded', () => {
+  // Elementos HTML
+  const imgFechada = document.getElementById('pokedex-fechada');
+  const imgAberta = document.getElementById('pokedex-aberta');
+  const tela = document.getElementById('tela-pokedex');
+  const btnIniciar = document.getElementById('btn-iniciar');
+  const botaoAbrir = document.getElementById('botao-abrir');
 
-// Ao clicar na imagem da Pokédex fechada, mostrar aberta
-imgFechada.addEventListener('click', () => {
-  imgFechada.classList.add('hidden');      // Esconde a pokédex fechada
-  imgAberta.classList.remove('hidden');    // Mostra a pokédex aberta
-  tela.classList.remove('hidden');         // Mostra a tela com botão
-});
+  // 🔘 Evento ao clicar no botão amarelo da pokédex
+  botaoAbrir.addEventListener('click', () => {
+    // Esconde a pokédex fechada e o botão amarelo
+    imgFechada.classList.add('hidden');
+    botaoAbrir.classList.add('hidden');
 
-// Ao clicar no botão "Iniciar Pokédex", vai para pokedex.html
-btnIniciar.addEventListener('click', () => {
-  window.location.href = 'pokedex.html';
+    // Mostra a pokédex aberta e a tela de boas-vindas
+    imgAberta.classList.remove('hidden');
+    tela.classList.remove('hidden');
+  });
+
+  // 🚀 Evento ao clicar em "Iniciar Pokédex"
+  btnIniciar.addEventListener('click', () => {
+    // Redireciona para a próxima tela (pokedex.html)
+    window.location.href = 'pokedex.html';
+  });
 });

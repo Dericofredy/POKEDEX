@@ -7,29 +7,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ 
   <div class="pokedex">
-    <!-- Pokédex fechada -->
-    <img
-      id="pokedex-fechada"
-      src="imagens/closed-pokedex.svg"
-      alt="Pokédex Fechada"
-      class="clicavel"
-    />
+  <!-- Pokédex fechada -->
+  <img
+    id="pokedex-fechada"
+    src="imagens/closed-pokedex.svg"
+    alt="Pokédex Fechada"
+  />
 
-    <!-- Pokédex aberta -->
-    <img
-      id="pokedex-aberta"
-      src="imagens/open-pokedex.svg"
-      alt="Pokédex Aberta"
-      class="hidden"
-    />
+  <!-- Botão clicável sobre o botão amarelo -->
+  <button id="botao-abrir" aria-label="Abrir Pokédex"></button>
 
-    <!-- Tela sobreposta -->
-    <div id="tela-pokedex" class="hidden">
-      <p id="mensagem">Pronto para explorar a Pokédex!</p>
-      <button id="btn-iniciar">Iniciar Pokédex</button>
-    </div>
+  <!-- Pokédex aberta -->
+  <img
+    id="pokedex-aberta"
+    src="imagens/open-pokedex.svg"
+    alt="Pokédex Aberta"
+    class="hidden"
+  />
+
+  <!-- Tela interna -->
+  <div id="tela-pokedex" class="hidden">
+    <p id="mensagem">Pronto para explorar a Pokédex!</p>
+    <button id="btn-iniciar">Iniciar Pokédex</button>
   </div>
+</div>
+
 
   <script src="script.js"></script>
 </body>

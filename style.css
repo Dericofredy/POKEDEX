@@ -1,76 +1,73 @@
-/* Reset básico */
+/* === RESET BÁSICO === */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Estilo geral da página */
+/* === ESTILO GERAL DO BODY === */
 body {
-  background-color: #111;
-  height: 100vh;
+  background-color: #111;            /* fundo escuro para destacar a pokédex */
+  height: 100vh;                     /* ocupa a tela toda */
   display: flex;
-  align-items: center;
+  align-items: center;              /* alinha verticalmente */
   font-family: 'Arial', sans-serif;
-  overflow: hidden;
+  overflow: hidden;                 /* evita rolagem */
 }
 
-/* Pokédex container fixo no canto esquerdo */
+/* === CONTAINER DA POKÉDEX === */
 .pokedex {
   position: relative;
   height: auto;
-  width: 280px;              /* largura total da pokédex aberta */
-  aspect-ratio: 280 / 204;
+  width: 280px;                     /* largura total da pokédex aberta */
+  aspect-ratio: 280 / 204;          /* mantém proporção */
   margin-left: 0;
-  margin-right: auto;
+  margin-right: auto;              /* garante que fique colada à esquerda */
 }
 
-/* Imagens: ocupam todo o espaço do container */
+/* === IMAGENS DA POKÉDEX (FECHADA E ABERTA) === */
 .pokedex img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 280px;
+  width: 280px;                    /* largura total da imagem aberta */
   height: auto;
   object-fit: contain;
   border-radius: 10px;
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Força a imagem fechada ocupar apenas parte da largura */
+/* === IMAGEM FECHADA: menor (154px), sobrepõe a aberta */
 #pokedex-fechada {
-  width: 154px; /* largura real da pokédex fechada */
+  width: 154px;                    /* largura da imagem fechada */
   z-index: 5;
 }
 
-/* A imagem aberta já está com 280px, cobrindo tudo */
+/* === IMAGEM ABERTA: largura total (280px) */
 #pokedex-aberta {
   z-index: 4;
 }
 
-.clicavel {
-  cursor: pointer;
-}
-
+/* === ESTADO DE ESCONDER ELEMENTOS === */
 .hidden {
   display: none;
 }
 
-/* Tela sobreposta */
+/* === TELA INTERNA SOBRE A PARTE DIREITA DA POKÉDEX === */
 #tela-pokedex {
   position: absolute;
   top: 18%;
-  left: 170px; /* posição relativa à parte direita da pokédex */
+  left: 170px;                    /* posição da parte direita */
   width: 110px;
   text-align: center;
-  color: #00ff00;
+  color: #00ff00;                 /* verde estilo digital */
   font-weight: bold;
   text-shadow: 1px 1px 2px #000;
   z-index: 10;
-  pointer-events: none;
+  pointer-events: none;          /* impede cliques na mensagem */
 }
 
-/* Botão */
+/* === BOTÃO INICIAR POKÉDEX === */
 #btn-iniciar {
   margin-top: 20px;
   padding: 10px 15px;
@@ -86,4 +83,18 @@ body {
 
 #btn-iniciar:hover {
   background-color: #c00;
+}
+
+/* === BOTÃO INVISÍVEL SOBRE O BOTÃO AMARELO DA POKÉDEX === */
+#botao-abrir {
+  position: absolute;
+  top: 120px;         /* alinhado verticalmente ao botão amarelo */
+  left: 40px;         /* alinhado horizontalmente */
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;        /* acima da imagem */
+  padding: 0;
 }
