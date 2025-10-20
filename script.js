@@ -1,26 +1,27 @@
-// Espera o DOM carregar para evitar erro de elementos nulos
+// Aguarda o carregamento completo do DOM antes de manipular elementos
 window.addEventListener('DOMContentLoaded', () => {
-  // Elementos HTML
-  const imgFechada = document.getElementById('pokedex-fechada');
-  const imgAberta = document.getElementById('pokedex-aberta');
-  const tela = document.getElementById('tela-pokedex');
-  const btnIniciar = document.getElementById('btn-iniciar');
-  const botaoAbrir = document.getElementById('botao-abrir');
+  // 🎯 Elementos principais do DOM
+  const imgFechada = document.getElementById('pokedex-fechada'); // imagem fechada
+  const imgAberta = document.getElementById('pokedex-aberta');   // imagem aberta
+  const tela = document.getElementById('tela-pokedex');          // tela sobreposta com botão
+  const btnIniciar = document.getElementById('btn-iniciar');     // botão iniciar pokédex
 
-  // 🔘 Evento ao clicar no botão amarelo da pokédex
-  botaoAbrir.addEventListener('click', () => {
-    // Esconde a pokédex fechada e o botão amarelo
-    imgFechada.classList.add('hidden');
-    botaoAbrir.classList.add('hidden');
-
-    // Mostra a pokédex aberta e a tela de boas-vindas
-    imgAberta.classList.remove('hidden');
-    tela.classList.remove('hidden');
+  // ✅ Quando clica na pokédex FECHADA → abre
+  imgFechada.addEventListener('click', () => {
+    imgFechada.classList.add('hidden');        // esconde imagem fechada
+    imgAberta.classList.remove('hidden');      // mostra imagem aberta
+    tela.classList.remove('hidden');           // mostra mensagem e botão
   });
 
-  // 🚀 Evento ao clicar em "Iniciar Pokédex"
+  // ✅ Quando clica na pokédex ABERTA → fecha
+  imgAberta.addEventListener('click', () => {
+    imgAberta.classList.add('hidden');         // esconde imagem aberta
+    tela.classList.add('hidden');              // esconde mensagem e botão
+    imgFechada.classList.remove('hidden');     // mostra imagem fechada novamente
+  });
+
+  // 🚀 Quando clica no botão "Iniciar Pokédex" → vai para pokedex.html
   btnIniciar.addEventListener('click', () => {
-    // Redireciona para a próxima tela (pokedex.html)
     window.location.href = 'pokedex.html';
   });
 });

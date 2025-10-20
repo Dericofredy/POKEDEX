@@ -7,102 +7,89 @@
 
 /* === ESTILO GERAL DO BODY === */
 body {
-  background-color: #111;            /* fundo escuro para destacar a pokédex */
-  height: 100vh;                     /* ocupa a tela toda */
-  display: flex;
-  align-items: center;              /* alinha verticalmente */
+  background-color: #111;        /* fundo escuro para destacar a pokédex */
+  height: 100vh;                 /* ocupa a altura total da tela */
+  display: flex;                 /* flex container para centralizar */
+  align-items: center;           /* centraliza verticalmente */
   font-family: 'Arial', sans-serif;
-  overflow: hidden;                 /* evita rolagem */
+  overflow: hidden;             /* evita barras de rolagem */
+}
+
+/* === CONTAINER EXTERNO PARA POSICIONAMENTO DA POKÉDEX === */
+.container-pokedex {
+  display: flex;
+  justify-content: flex-start;   /* posiciona à esquerda */
+  align-items: center;           /* centraliza verticalmente */
+  height: 100vh;                 /* ocupa toda a tela */
+  padding-left: 20px;            /* margem opcional à esquerda */
 }
 
 /* === CONTAINER DA POKÉDEX === */
 .pokedex {
-  position: relative;
-  height: auto;
-  width: 280px;                     /* largura total da pokédex aberta */
-  aspect-ratio: 280 / 204;          /* mantém proporção */
+  position: relative;            /* permite posicionamento absoluto interno */
+  width: 280px;                  /* largura da imagem da pokédex aberta */
+  aspect-ratio: 280 / 204;       /* mantém proporção da pokédex */
   margin-left: 0;
-  margin-right: auto;              /* garante que fique colada à esquerda */
+  margin-right: auto;            /* força alinhamento à esquerda */
 }
 
-/* === IMAGENS DA POKÉDEX (FECHADA E ABERTA) === */
+/* === IMAGENS DA POKÉDEX (fechada e aberta) === */
 .pokedex img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 280px;                    /* largura total da imagem aberta */
-  height: auto;
-  object-fit: contain;
+  width: 280px;                  /* largura total da pokédex aberta */
+  height: auto;                  /* altura proporcional */
+  object-fit: contain;           /* evita distorções */
   border-radius: 10px;
   transition: opacity 0.3s ease-in-out;
+  cursor: pointer;               /* o clique agora é na imagem toda */
 }
 
-/* === IMAGEM FECHADA: menor (154px), sobrepõe a aberta */
+/* === IMAGEM FECHADA: menor (154px) e sobrepõe a aberta === */
 #pokedex-fechada {
-  width: 154px;                    /* largura da imagem fechada */
-  z-index: 5;
+  width: 154px;                  /* largura da pokédex fechada */
+  z-index: 5;                    /* sobre a imagem aberta */
 }
 
-/* === IMAGEM ABERTA: largura total (280px) */
+/* === IMAGEM ABERTA === */
 #pokedex-aberta {
-  z-index: 4;
+  z-index: 4;                    /* fica abaixo da imagem fechada */
 }
 
-/* === ESTADO DE ESCONDER ELEMENTOS === */
+/* === CLASSE UTILITÁRIA: ESCONDER ELEMENTO === */
 .hidden {
   display: none;
 }
 
-/* === TELA INTERNA SOBRE A PARTE DIREITA DA POKÉDEX === */
+/* === TELA SOBREPOSTA DENTRO DA POKÉDEX ABERTA === */
 #tela-pokedex {
   position: absolute;
-  top: 18%;
-  left: 170px;                    /* posição da parte direita */
+  top: 18%;                      /* posicionamento vertical */
+  left: 170px;                   /* deslocado para o lado direito da pokédex */
   width: 110px;
   text-align: center;
-  color: #00ff00;                 /* verde estilo digital */
+  color: #00ff00;                /* cor estilo visor digital */
   font-weight: bold;
-  text-shadow: 1px 1px 2px #000;
-  z-index: 10;
-  pointer-events: none;          /* impede cliques na mensagem */
+  text-shadow: 1px 1px 2px #000; /* contraste para legibilidade */
+  z-index: 10;                   /* acima das imagens */
+  pointer-events: none;         /* impede clique sobre o texto */
 }
 
-/* === BOTÃO INICIAR POKÉDEX === */
+/* === BOTÃO "INICIAR POKÉDEX" === */
 #btn-iniciar {
   margin-top: 20px;
   padding: 10px 15px;
   font-size: 14px;
   border: none;
-  background-color: #f00;
+  background-color: #f00;        /* vermelho principal */
   color: white;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s;
-  pointer-events: all;
+  pointer-events: all;           /* permite clique */
 }
 
 #btn-iniciar:hover {
-  background-color: #c00;
-}
-
-/* === BOTÃO INVISÍVEL SOBRE O BOTÃO AMARELO DA POKÉDEX === */
-#botao-abrir {
-  position: absolute;
-  top: 120px;         /* alinhado verticalmente ao botão amarelo */
-  left: 40px;         /* alinhado horizontalmente */
-  width: 25px;
-  height: 25px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 10;        /* acima da imagem */
-  padding: 0;
-}
-/* === CONTAINER EXTERNO PARA POSICIONAMENTO DA POKÉDEX === */
-.container-pokedex {
-  display: flex;
-  justify-content: flex-start;   /* fixa no lado esquerdo (poderia ser center) */
-  align-items: center;           /* centraliza verticalmente */
-  height: 100vh;
-  padding-left: 20px;            /* espaço da borda esquerda opcional */
+  background-color: #c00;        /* vermelho escuro ao passar o mouse */
 }

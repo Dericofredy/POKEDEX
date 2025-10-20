@@ -1,0 +1,40 @@
+[
+  {
+    "versao": "v0.0.0",
+    "data": "2025-06-20",
+    "titulo": "Estrutura básica da Pokédex",
+    "descricao": "Projeto inicial com HTML, CSS e JS para exibição de Pokémons usando a PokéAPI.",
+    "destaques": [
+      "Pesquisa por nome em tempo real",
+      "Cards com imagem, tipo e número",
+      "Modal com ficha completa: nome, tipos, habitat, jogos",
+      "Estatísticas visuais (barras de HP, ataque, etc.)",
+      "Botão com som individual ou genérico do Pokémon",
+      "Layout responsivo e visual inspirado em pokemon.com"
+    ]
+  },
+  {
+    "versao": "v1.0.0",
+    "data": "2025-10-19",
+    "titulo": "Animação Ash e Pikachu + Tela inicial",
+    "descricao": "Introduz a abertura com Ash chamando o Pikachu e transição visual inicial do sistema.",
+    "destaques": [
+      "Tela com imagem de Ash.webp",
+      "Animação com fala 'Pikachu, eu escolho você!'",
+      "Carregamento do sprite do Pikachu via PokéAPI"
+    ]
+  },
+  {
+    "versao": "v1.0.1",
+    "data": "2025-10-20",
+    "titulo": "Pokédex interativa com clique no botão real",
+    "descricao": "Melhoria de UX: só o botão amarelo da Pokédex é clicável para abrir a interface.",
+    "destaques": [
+      "Posicionamento absoluto do botão invisível sobre o botão amarelo",
+      "Substituição da imagem de Pokédex por SVG responsivo",
+      "Centralização vertical do layout com flexbox",
+      "Container externo `.container-pokedex` adicionado para melhor controle",
+      "Código refatorado e totalmente comentado (HTML, CSS e JS)"
+    ]
+  }
+]

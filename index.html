@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pokédex Interativa</title>
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- Estilo principal da Pokédex -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- 📦 Container externo para centralização vertical -->
   <div class="container-pokedex">
+    
+    <!-- 🧩 Container da Pokédex (fechada e aberta) -->
     <div class="pokedex">
-      <!-- Pokédex fechada -->
-      <img id="pokedex-fechada" src="imagens/closed-pokedex.svg" alt="Pokédex Fechada" />
-      <button id="botao-abrir" aria-label="Abrir Pokédex"></button>
 
-      <!-- Pokédex aberta -->
-      <img id="pokedex-aberta" src="imagens/open-pokedex.svg" alt="Pokédex Aberta" class="hidden" />
+      <!-- 📕 Imagem da Pokédex fechada -->
+      <img
+        id="pokedex-fechada"
+        src="imagens/closed-pokedex.svg"
+        alt="Pokédex Fechada"
+      />
 
-      <!-- Tela interna -->
+      <!-- 📘 Imagem da Pokédex aberta (inicialmente escondida) -->
+      <img
+        id="pokedex-aberta"
+        src="imagens/open-pokedex.svg"
+        alt="Pokédex Aberta"
+        class="hidden"
+      />
+
+      <!-- 🖥 Tela interna com mensagem e botão -->
       <div id="tela-pokedex" class="hidden">
         <p id="mensagem">Pronto para explorar a Pokédex!</p>
         <button id="btn-iniciar">Iniciar Pokédex</button>
       </div>
-    </div>
-  </div>
 
+    </div> <!-- fim .pokedex -->
+  </div> <!-- fim .container-pokedex -->
+
+  <!-- 🔁 Script principal com interações -->
   <script src="script.js"></script>
 </body>
-
 </html>
